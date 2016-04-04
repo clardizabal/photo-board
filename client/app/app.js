@@ -16,10 +16,10 @@ angular.module('photoboard', [
     .when('/board',  {
       templateUrl: 'app/board/board.html'
       // controller: 'BoardController'
+    })
+    .when('/upload', {
+      templateUrl: 'app/upload/upload.html'
     });
-    // .when('/addphotos', {
-    //   templateUrl: 'app/addphotos/addphotos.html'
-    // });
 
   // $httpProvider.interceptors.push('AttachTokens');
 });
