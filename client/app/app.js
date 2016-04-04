@@ -19,7 +19,7 @@ angular.module('photoboard', [
     //   templateUrl: 'app/addphotos/addphotos.html'
     // });
 
-  $httpProvider.interceptors.push('AttachTokens');
+  // $httpProvider.interceptors.push('AttachTokens');
 });
 // .factory('AttachTokens', function($window) {
 //   var attach = {
