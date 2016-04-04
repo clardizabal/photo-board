@@ -12,8 +12,8 @@ angular.module('photoboard', [
     //   controller: 'AuthController'
     // })
     .when('/board',  {
-      templateUrl: 'app/board/board.html',
-      controller: 'BoardController'
+      templateUrl: 'app/board/board.html'
+      // controller: 'BoardController'
     });
     // .when('/addphotos', {
     //   templateUrl: 'app/addphotos/addphotos.html'
