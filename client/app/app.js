@@ -1,4 +1,6 @@
 angular.module('photoboard', [
+  'photoboard.services',
+  'photoboard.board',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
