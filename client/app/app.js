@@ -7,11 +7,11 @@ angular.module('photoboard', [
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
     .when('/signin', {
-      // templateUrl: 'app/auth/signin.html',
+      templateUrl: 'app/auth/signin.html',
       // controller: 'AuthController'
     })
     .when('/signup', {
-      // templateUrl: 'app/auth/signup.html',
+      templateUrl: 'app/auth/signup.html',
       // controller: 'AuthController'
     })
     .when('/board',  {
