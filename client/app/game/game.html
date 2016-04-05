@@ -9,9 +9,9 @@
 
   <div class='board' ng-repeat='photo in randomSix track by $index'>
     <container class='card'>
-      <img class='flip' src='{{photo.img}}' ng-hide="!showme"/>
-      <a href="" ng-click="showme=true">Show</a>
-      <button ng-click="showme=false">Hide</button> 
+      <img class='flip' src='{{photo.img}}' ng-show="photo.showme"/>
+      <a href="" ng-click="photo.showme=true; incrementCount()">Show</a>
+      <button ng-click="photo.showme=false">Hide</button> 
     </container>
   </div>
 

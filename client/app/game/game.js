@@ -3,6 +3,10 @@ angular.module('photoboard.game', [])
 .controller('GameController', function($scope, Photos) {
   $scope.data = {};
   $scope.randomSix = [];
+  $scope.count = 0;
+  $scope.flipOne;
+  $scope.flipTwo;
+  var OFFSET = 3;
 
   $scope.showDelete = function(itemStatus) {
     var testStatus = ["New", "Completed"];
@@ -11,6 +15,24 @@ angular.module('photoboard.game', [])
       return true;
     }
     return false;
+  };
+
+  var resetShow = function(indexA, indexB) {
+    $scope.randomSix[indexA].showme = false;
+    $scope.randomSix[indexB].showme = false;
+    // console.log($scope.randomSix);
+  };
+
+  $scope.incrementCount = function() {
+    $scope.count++;
+    if ($scope.count === 1) {
+      $scope.flipOne = this.$id - OFFSET;
+    } else if ($scope.count % 2 === 0) {
+      $scope.flipTwo = this.$id - OFFSET;
+    } else if ($scope.count % 2 === 1) {
+      resetShow($scope.flipOne, $scope.flipTwo);
+      $scope.flipOne = this.$id - OFFSET;
+    }
   };
 
   var shuffle = function(array) {
@@ -28,22 +50,17 @@ angular.module('photoboard.game', [])
   console.log('GAME CONTROLLER');
 
   Photos.getAll().then(function(photos) {
-    // console.log(photos);
     $scope.data.photos = photos;
     var photoBucket = photos.slice(0);
-    // console.log(photos);
 
     for (var i = 0; i < 6; i++) {
       var randomIndex = Math.floor(Math.random() * photoBucket.length);
-      console.log(randomIndex);
       photoBucket[randomIndex].status = true;
-      $scope.randomSix.push(photoBucket[randomIndex]);
-      $scope.randomSix.push(photoBucket[randomIndex]);
+      $scope.randomSix.push(angular.copy(photoBucket[randomIndex]));
+      $scope.randomSix.push(angular.copy(photoBucket[randomIndex]));
       photoBucket.splice(randomIndex, 1);
     }
-    // console.log($scope.randomSix);
     $scope.randomSix = shuffle($scope.randomSix);
   });
 
-  // console.log($scope.data.photos);
 });
