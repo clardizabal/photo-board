@@ -3,6 +3,11 @@ body {
   margin-top: 10px;
   font-family: arial, sans-serif;
 }
+.board {
+  height: 1000px;
+  width: 1000px;
+  float: left;
+}
 
 .photo, .flip {
   /*content: url('http://vignette4.wikia.nocookie.net/nintendo/images/4/43/Bulbasaur.png/revision/latest?cb=20141002083518&path-prefix=en');*/
