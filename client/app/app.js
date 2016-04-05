@@ -8,11 +8,11 @@ angular.module('photoboard', [
   $routeProvider
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
-      // controller: 'AuthController'
+      controller: 'AuthController'
     })
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
-      // controller: 'AuthController'
+      controller: 'AuthController'
     })
     .when('/board',  {
       templateUrl: 'app/board/board.html'

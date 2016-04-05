@@ -7,7 +7,7 @@ angular.module('photoboard.auth', [])
     Auth.signin($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.photoboard', token);
-        $location.path('/links');
+        $location.path('/board');
       })
       .catch(function (error) {
         console.error(error);
@@ -18,7 +18,7 @@ angular.module('photoboard.auth', [])
     Auth.signup($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.photoboard', token);
-        $location.path('/links');
+        $location.path('/board');
       })
       .catch(function (error) {
         console.error(error);
