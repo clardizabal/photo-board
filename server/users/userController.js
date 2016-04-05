@@ -2,11 +2,15 @@ var Q = require('q');
 var jwt = require('jwt-simple');
 var User = require('./userModel.js');
 
+// Promisify a few mongoose methods with the `q` promise library
+var findUser = Q.nbind(User.findOne, User);
+var createUser = Q.nbind(User.create, User);
+
 module.exports = {
   signup: function (req, res, next) {
     var username = req.body.username;
     var password = req.body.password;
-
+    console.log('MAKING A NEW USER');
     // check to see if user already exists
     findUser({username: username})
       .then(function (user) {

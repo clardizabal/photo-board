@@ -26,6 +26,7 @@ angular.module('photoboard.services', [])
   };
 
   var signup = function(user) {
+    console.log('MAKING POST REQUEST');
     return $http({
       method: 'POST',
       url: '/api/users/signup',

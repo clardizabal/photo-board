@@ -15,6 +15,7 @@ angular.module('photoboard.auth', [])
   };
 
   $scope.signup = function () {
+    console.log('SIGN UP A USER');
     Auth.signup($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.photoboard', token);
