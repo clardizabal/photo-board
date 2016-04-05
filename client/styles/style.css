@@ -5,7 +5,7 @@ body {
 }
 
 .photo {
-  content: url('http://vignette4.wikia.nocookie.net/nintendo/images/4/43/Bulbasaur.png/revision/latest?cb=20141002083518&path-prefix=en');
+  /*content: url('http://vignette4.wikia.nocookie.net/nintendo/images/4/43/Bulbasaur.png/revision/latest?cb=20141002083518&path-prefix=en');*/
   height: 200px;
   width: 200px;
   float: left;
