@@ -39,7 +39,12 @@ angular.module('photoboard.upload', [])
   };
 }])
 
-.controller('UploadController', function($scope, Photos) {
+.controller('UploadController', function($scope, $location, Photos, Auth) {
+
+  if (!Auth.isAuth()) {
+    $location.path('/signin');
+  }
+
   console.log('SET UPLOAD CONTROLLER');
   $scope.photo = {};
 

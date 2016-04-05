@@ -1,6 +1,11 @@
 angular.module('photoboard.game', [])
 
-.controller('GameController', function($scope, Photos) {
+.controller('GameController', function($scope, $location,Photos, Auth) {
+
+  if (!Auth.isAuth()) {
+    $location.path('/signin');
+  }
+
   $scope.data = {};
   $scope.randomSix = [];
   $scope.count = 0;
