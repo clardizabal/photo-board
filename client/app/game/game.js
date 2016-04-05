@@ -20,17 +20,32 @@ angular.module('photoboard.game', [])
   var resetShow = function(indexA, indexB) {
     $scope.randomSix[indexA].showme = false;
     $scope.randomSix[indexB].showme = false;
-    // console.log($scope.randomSix);
+    console.log($scope.randomSix);
   };
 
+  var checkPair = function(indexA, indexB) {
+    if ($scope.randomSix[indexA]._id === $scope.randomSix[indexB]._id) {
+      $scope.randomSix[indexA].showme = true;
+      $scope.randomSix[indexB].showme = true;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   $scope.incrementCount = function() {
+    // var foundPair = false;
     $scope.count++;
     if ($scope.count === 1) {
       $scope.flipOne = this.$id - OFFSET;
     } else if ($scope.count % 2 === 0) {
       $scope.flipTwo = this.$id - OFFSET;
+      foundPair = checkPair($scope.flipOne, $scope.flipTwo);
+      console.log(foundPair);
     } else if ($scope.count % 2 === 1) {
-      resetShow($scope.flipOne, $scope.flipTwo);
+      if (!foundPair) {
+        resetShow($scope.flipOne, $scope.flipTwo);
+      }
       $scope.flipOne = this.$id - OFFSET;
     }
   };
