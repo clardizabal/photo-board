@@ -24,8 +24,9 @@ angular.module('photoboard.upload', [])
   $scope.photo = {};
 
   $scope.addPhoto = function() {
-    // console.log('ADDING PHOTO: ', $scope.photo.file);
     console.log('ADDING PHOTO');
     Photos.addOne($scope.photo);
   };
+
+
 });

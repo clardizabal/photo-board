@@ -9,11 +9,9 @@ var findAllPhoto = Q.nbind(Photo.find, Photo);
 
 module.exports = {
   newPhoto: function(req, res, next) {
-    var photo = new Photo;
-    var imgPath = req.body.file;
-    // console.log('IMAGE PATH: ', imgPath);
-    console.log('NEW PHOTO!!!');
-    return;
-    // photo.img.data = fs.readFileSync(imgPath);
+    var photo = req.body.file;
+    console.log(typeof photo);
+    res.json(createPhoto({img: photo}));
+    // console.log('REQUEST: ', photo);
   }
 };

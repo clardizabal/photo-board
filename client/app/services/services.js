@@ -12,7 +12,7 @@ angular.module('photoboard.services', [])
   };
 
   var addOne = function(file) {
-    console.log('SENDING POST REQUEST');
+    console.log('SENDING POST REQUEST: ', file);
     return $http({
       method: 'POST',
       url: '/api/photos',
