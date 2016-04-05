@@ -11,14 +11,15 @@ angular.module('photoboard.services', [])
     });
   };
 
-  var addOne = function(filePath) {
-    console.log('POST REQUEST: ', filePath);
+  var addOne = function(file) {
+    console.log('SENDING POST REQUEST');
     return $http({
       method: 'POST',
       url: '/api/photos',
-      data: filePath
+      data: file
     })
     .then(function(resp) {
+      console.log('POST REQUEST SUCCESS');
       return resp;
     });
   };
