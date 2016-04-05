@@ -31,7 +31,7 @@ angular.module('photoboard.game', [])
     } else {
       return false;
     }
-  }
+  };
 
   $scope.incrementCount = function() {
     // var foundPair = false;
