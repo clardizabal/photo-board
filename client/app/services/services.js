@@ -1,7 +1,7 @@
 angular.module('photoboard.services', [])
 
 .factory('Photos', function($http) {
-  var getImages = function() {
+  var getAll = function() {
     return $http({
       method: 'GET',
       url: '/api/photos'
@@ -11,7 +11,19 @@ angular.module('photoboard.services', [])
     });
   };
 
-  return {getImages: getImages};
+  var addOne = function(filePath) {
+    console.log('POST REQUEST: ', filePath);
+    return $http({
+      method: 'POST',
+      url: '/api/photos',
+      data: filePath
+    })
+    .then(function(resp) {
+      return resp;
+    });
+  };
+
+  return {getAll: getAll, addOne: addOne};
 })
 .factory('Auth', function($http, $location, $window) {
   var signin = function(user) {

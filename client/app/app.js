@@ -2,6 +2,7 @@ angular.module('photoboard', [
   'photoboard.services',
   'photoboard.auth',
   'photoboard.board',
+  'photoboard.upload',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
@@ -15,11 +16,12 @@ angular.module('photoboard', [
       controller: 'AuthController'
     })
     .when('/board',  {
-      templateUrl: 'app/board/board.html'
-      // controller: 'BoardController'
+      templateUrl: 'app/board/board.html',
+      controller: 'BoardController'
     })
     .when('/upload', {
-      templateUrl: 'app/upload/upload.html'
+      templateUrl: 'app/upload/upload.html',
+      controller: 'UploadController'
     });
 
   $httpProvider.interceptors.push('AttachTokens');

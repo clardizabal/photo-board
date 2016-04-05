@@ -3,6 +3,8 @@ angular.module('photoboard.auth', [])
 .controller('AuthController', function($scope, $window, $location, Auth) {
   $scope.user = {};
 
+  console.log('AUTH CONTROLLER');
+
   $scope.signin = function () {
     Auth.signin($scope.user)
       .then(function (token) {

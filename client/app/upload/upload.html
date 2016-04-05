@@ -5,8 +5,8 @@
       <li><a href="#/upload" class='upload'>Upload</a></li>
     </ul>
   </div>
-  <form name='myForm' >
-    <input type='file' required>
+  <form name='myForm' ng-submit='addPhoto()'>
+    <input type='file' ng-model='photo.path'>
     <input type='submit' value='Upload new photo'>
   </form>
 </div>
