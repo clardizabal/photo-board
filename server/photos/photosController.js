@@ -20,8 +20,12 @@ module.exports = {
 
   newPhoto: function(req, res, next) {
     var photo = req.body.file;
-    console.log(typeof photo);
-    res.json(createPhoto({img: photo}));
-    // console.log('REQUEST: ', photo);
+    // console.log(typeof photo);
+    console.log('Number of files to upload: ', photo.length);
+
+    for (var i = 0; i < photo.length; i++) {
+      createPhoto({img: photo[i]});      
+    }
+    res.json();
   }
 };
