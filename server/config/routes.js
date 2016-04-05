@@ -9,6 +9,7 @@ module.exports = function (app, express) {
   // app.get('/api/users/signedin', userController.checkAuth);
 
   app.post('/api/photos', photosController.newPhoto);
+  app.get('/api/photos', photosController.allPhotos);
 
   // If a request is sent somewhere other than the routes above,
   // send it through our custom error handler

@@ -5,7 +5,8 @@ angular.module('photoboard.board', [])
 
   console.log('BOARD CONTROLLER');
 
-  // Photos.getAll().then(function(photos) {
-  //   console.log(photos);
-  // });
+  Photos.getAll().then(function(photos) {
+    // console.log(photos);
+    $scope.data.photos = photos;
+  });
 });

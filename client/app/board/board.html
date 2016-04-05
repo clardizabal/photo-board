@@ -6,8 +6,10 @@
     </ul>
   </div>
 
-  <div class='board'>
-  <table style="width:100%">
+  <div class='board' ng-repeat='photo in data.photos'>
+    <img src='{{photo.img}}'/>
+
+<!--   <table style="width:100%">
     <tr>
       <td class="photo" ></td>
       <td class="photo" ></td>
@@ -32,7 +34,7 @@
       <td class="photo" ></td>
       <td class="photo" ></td>
     </tr>
-  </table>
+  </table> -->
   </div>
 
 </div>
