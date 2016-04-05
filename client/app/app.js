@@ -3,6 +3,7 @@ angular.module('photoboard', [
   'photoboard.auth',
   'photoboard.board',
   'photoboard.upload',
+  'photoboard.game',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
@@ -18,6 +19,10 @@ angular.module('photoboard', [
     .when('/board',  {
       templateUrl: 'app/board/board.html',
       controller: 'BoardController'
+    })
+    .when('/game',  {
+      templateUrl: 'app/game/game.html',
+      controller: 'GameController'
     })
     .when('/upload', {
       templateUrl: 'app/upload/upload.html',
