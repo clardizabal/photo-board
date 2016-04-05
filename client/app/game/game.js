@@ -4,6 +4,15 @@ angular.module('photoboard.game', [])
   $scope.data = {};
   $scope.randomSix = [];
 
+  $scope.showDelete = function(itemStatus) {
+    var testStatus = ["New", "Completed"];
+
+    if(testStatus.indexOf(itemStatus) > -1) { //test the Status
+      return true;
+    }
+    return false;
+  };
+
   var shuffle = function(array) {
     var shuffledArray = array.slice();
     var len = shuffledArray.length;
@@ -27,6 +36,7 @@ angular.module('photoboard.game', [])
     for (var i = 0; i < 6; i++) {
       var randomIndex = Math.floor(Math.random() * photoBucket.length);
       console.log(randomIndex);
+      photoBucket[randomIndex].status = true;
       $scope.randomSix.push(photoBucket[randomIndex]);
       $scope.randomSix.push(photoBucket[randomIndex]);
       photoBucket.splice(randomIndex, 1);

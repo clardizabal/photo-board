@@ -4,9 +4,16 @@ body {
   font-family: arial, sans-serif;
 }
 
-.photo {
+.photo, .flip {
   /*content: url('http://vignette4.wikia.nocookie.net/nintendo/images/4/43/Bulbasaur.png/revision/latest?cb=20141002083518&path-prefix=en');*/
   height: 200px;
   width: 200px;
+  float: left;
+}
+
+.card {
+  /*content: url('http://vignette4.wikia.nocookie.net/nintendo/images/4/43/Bulbasaur.png/revision/latest?cb=20141002083518&path-prefix=en');*/
+  height: 250px;
+  width: 250px;
   float: left;
 }
